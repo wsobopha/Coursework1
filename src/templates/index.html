@@ -1,14 +1,45 @@
-<!doctype html>
+<DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Wandile's Music Collection</title>
+  <title>Wandile's Airliner Collection</title>
+  
+<link rel= "stylesheet" type="text/css" href= "{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 <body>
   <div id="header">
-    <h1>Wandile's Music Collection</h1>
-  </div>
+    <div id="logo-container">
+      <b id="logo-text">Wandile's Airliner Collection</b>
+      <img id="logo-image" src=" {{ url_for('static', filename='images/airplanelogo.png') }} ">
+    </div>
 
-  {% block content %} {% endblock %}
+    <div id="nav-container">
+      <nav>
+        <ul>
+          <li>
+            <a href="/wandile-airliner-collection/">Browse</a>
+          </li>
+          <li>
+            <a href="wandile-airliner-collection/boeing/">Boeing</a>
+          </li>
+          <li>
+            <a href="wandile-airliner-collection/airbus/">Airbus</a>
+          </li>
+          <li>
+            <a href="wandile-airliner-collection/bombardier/">Bombardier</a>
+          </li>
+          <li>
+            <a href="wandile-airliner-collection/tupelov/">Tupelov</a>
+          </li>
+          <li>
+            <a href="wandile-airliner-collection/embraer/">Embraer</a>
+          </li>
+        </ul>
+      </nav>
+    </div
+  /div>
+
+  {% block body %} {% endblock %}
 
 </body>
 </html>

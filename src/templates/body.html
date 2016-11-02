@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+{% block body %}
+  <div id="body-container">
+   <h1> {% block title %}{{title}} {% endblock %} </h1>
+   {% block modelteaser %}
+   {% for model in models %}
+      <div class="model-container">
+        <img id ="model-image" src="{{
+        url_for('static',filename='images/'+manufacturer+'/'+model+'.jpg')}}"
+        width="296" height="202">
+      </div>
+   {% endfor %}
+  {% endblock %}
+  </div>
+{% endblock %}
+
+<!--        <img id="model-image" src=" {{
+        url_for('static',filename='images/'+manufacturer+'/'+image[n])
+        }}  "> -->
+
