@@ -3,35 +3,75 @@
 {% block modelteaser %}
   <div class="model-container">
     <img class="model-image" src="{{url_for('static',filename='images/airbus/a318.jpg')}}">
-    <h2><a href="/wandile-airliner-collection/airbus/a318/">Airbus A318</a></h2>
-    <p>Number of engines: 2 <br> Number of seats: 132 <br> Range: 3,100 nm <br>
-    Operators: <br> British Airways <br> Air France <br> Avianca <br> Body:
-    Narrow-body
+    <h2><a href=" {{url_for('airbus_model_a318')}} ">Airbus A318</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 132</li>
+      <li>Range: 3,100 nm</li>
+      <li>Operators: <br> British Airways <br> Air France <br> Avianca</li> 
+      <li>Body: Narrow-body</li>
+    </ul>
   </div>
 
   <div class="model-container">
     <img class="model-image"src="{{url_for('static',filename='images/airbus/a321.jpg')}}">
-    <h2><a href="/wandile-airliner-collection/airbus/a321/">Airbus A321</a></h2>
-    <p>Number of engines: 2 <br> Number of seats: 185-236 <br> Range: 3,200 nm <br>
-    Operators: <br> Lufthansa <br> US Airways <br> Air France <br> Body:
-    Narrow-body
+    <h2><a href=" {{url_for('airbus_model_a321')}} ">Airbus A321</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 185-236</li> 
+      <li>Range: 3,200 nm</li>
+      <li>Operators: <br> Lufthansa <br> US Airways <br> Air France</li>
+      <li>Body: Narrow-body</li>
+    <ul>
   </div>
 
   <div class="model-container">
     <img class="model-image"src="{{url_for('static',filename='images/airbus/a330-200.jpg')}}">
-    <h2><a href="/wandile-airliner-collection/airbus/a330-200/">Airbus A330-200</a></h2>
-    <p>Number of engines: 2 <br> Number of seats: 246 <br> Range: 7,240 nm <br>
-    Operators: <br> Emirates <br> Air France <br> Turkish Airlines <br> Body:
-    Wide-body
+    <h2><a href=" {{url_for('airbus_model_a330')}} ">Airbus A330-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 246</li>
+      <li>Range: 7,240 nm</li>
+      <li> Operators: <br> Emirates <br> Air France <br> Turkish Airlines</li>
+      <li>Body: Wide-body</li>
+    <ul>
   </div>
 
   <div class="model-container">
     <img class="model-image"
     src="{{url_for('static',filename='images/airbus/a340-600.jpg')}}">
-    <h2><a href="/wandile-airliner-collection/airbus/a318/">Airbus A318</a></h2>
-    <p>Number of engines: 2 <br> Number of seats: 132 <br> Range: 3,100 nm <br>
-    Operators: <br> British Airways <br> Air France <br> Avianca <br> Body:
-    Narrow-body
+    <h2><a href=" {{url_for('airbus_model_a340')}} ">Airbus A340-600</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 379</li>
+      <li>Range: 7,500 nm</li>
+      <li>Operators: <br> Lufthansa <br> Virgin Atlantic <br> Etihad</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a350.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a350')}} ">Airbus A350</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 280-366</li>
+      <li>Range: 8,210 nm</li>
+      <li>Operators: <br> Singapore Airlines <br> Qatar Airways <br> Thai Airways</li> 
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a380.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a380')}} ">Airbus A380</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 525</li>
+      <li>Range: 8,200 nm</li>
+      <li>Operators: <br> Emirates <br> Singapore Airlines <br> Thai Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
   </div>
 
 {% endblock %}

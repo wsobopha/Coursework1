@@ -73,7 +73,11 @@ div#body-container {
 	height: 1000%;
 }
 
-p {
+ul.model-teaser{
+	padding-left: 20px;
+	width: 180px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	color: #e2e0e0;
 	font-family: sans-serif;
 	font-size: 14px;
@@ -99,9 +103,11 @@ h2 a:hover {
 
 h2 {
 	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 div.model-container {
+	float: left;
 	background-color: #303145;
 	position: relative;
 	margin-left: -4px;

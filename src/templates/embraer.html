@@ -1,3 +1,40 @@
 {% extends "body.html" %}
 {% block title %} Embraer {% endblock %}
-{% block modelteaser %} {% endblock %}
+{% block modelteaser %} 
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/erj145.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_erj145')}} ">Embraer ERJ145</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 37-50</li>
+      <li>Range: 1,300-1,550 nm</li>
+      <li>Operators: <br> SA Express <br> bmi Regional <br> Aeromexico Connect</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/e170.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e170')}} ">Embraer E170</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 80</li>
+      <li>Range: 1,800-2,150 nm</li>
+      <li>Operators: <br> Aeromexico Connect<br> LOT Polish Airlines<br>British Airways</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src="
+    {{url_for('static',filename='images/embraer/e195.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e190')}} ">Embraer E190</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 100-124</li>
+      <li>Range: 1,850-2,450 nm</li>
+      <li>Operators: <br> Air Canada <br> Lufthansa <br> American Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+{% endblock %}

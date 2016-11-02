@@ -3,50 +3,74 @@
 {% block modelteaser %} 
   <div class="model-container">
     <img class="model-image" src=" {{url_for('static',filename='images/boeing/737.jpg')}} ">
-    <h2><a href="/wandile-airliner-collection/boeing/737/">Boeing 737</a></h2>
-    <p>Number of engines: 2 <br> Number of seats: 110-210 <br> Range: 3,060 nm <br> 
-    Operators: <br> Ryanair <br> Delta Airlines <br> TUIfly <br> Body:
-    Narrow-body
+    <h2><a href=" {{url_for('boeing_model_737')}} ">Boeing 737</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 110-210</li>
+      <li>Range: 3,060 nm</li> 
+      <li>Operators: <br> Ryanair <br> Delta Airlines <br> TUIfly</li>
+      <li>Body: Narrow-body</li>
+    </ul>
   </div>
 
   <div class="model-container">
     <img class="model-image" src=" {{url_for('static',filename='images/boeing/757-200.jpg')}} ">
-    <h2><a href="/wandile-airliner-collection/boeing/757-200/">Boeing 757-200</a></h2>
-    <p>Number of engines: 2 <br> Number of seats: 224 <br> Range: 3,850 nm <br>
-    Operators: <br> United Continental <br> American Airlines <br> Delta Airlines <br> Body:
-    Narrow-body
+    <h2><a href=" {{url_for('boeing_model_757')}} ">Boeing 757-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 224</li>
+      <li>Range: 3,850 nm</li>
+      <li>Operators: <br> United Continental <br> American Airlines <br> Delta Airlines</li>
+      <li>Body: Narrow-body</li>
+    </ul>
   </div>
 
   <div class="model-container">
     <img class="model-image" src=" {{url_for('static',filename='images/boeing/767-300.jpg')}} ">
-    <h2><a href="/wandile-airliner-collection/boeing/767-300/">Boeing 767-300</a></h2>
-    <p>Number of engines: 2 <br> Number of seats: 290 <br> Range: 3,900 nm <br>
-    Operators: <br> Delta Airlines <br> Condor <br> Air New Zealand <br> Body:
-    Wide-body
+    <h2><a href=" {{url_for('boeing_model_767')}} ">Boeing 767-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 290</li>
+      <li>Range: 3,900 nm</li>
+      <li>Operators: <br> Delta Airlines <br> Condor <br> Air New Zealand</li>
+      <li>Body: Wide-body</li>
+    </ul>
   </div>
 
   <div class="model-container">
     <img class="model-image" src=" {{url_for('static',filename='images/boeing/787.jpg')}} ">
-    <h2><a href="/wandile-airliner-collection/boeing/787-dreamliner/">Boeing 787 Dreamliner</a></h2>
-    <p>Number of engines: 2 <br> Number of seats: 242 <br> Range: 7,355 nm <br>
-    Operators: <br> ANA <br> Ethiopian Airlines <br> British Airways <br> Body:
-    Wide-body
+    <h2><a href=" {{url_for('boeing_model_787')}} ">Boeing 787 Dreamliner</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 242</li>
+      <li>Range: 7,355 nm</li>
+      <li>Operators: <br> ANA <br> Ethiopian Airlines <br> British Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
   </div>
 
   <div class="model-container">
     <img class="model-image" src=" {{url_for('static',filename='images/boeing/777-300.jpg')}} ">
-    <h2><a href="/wandile-airliner-collection/boeing/777-300/">Boeing 777-300</a></h2>
-    <p>Number of engines: 2 <br> Number of seats: 550 <br> Range: 6,030 nm <br>
-    Operators: <br> Emirates <br> British Airways <br> KLM <br> Body:
-    Wide-body
+    <h2><a href=" {{url_for('boeing_model_777')}} ">Boeing 777-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 550</li>
+      <li>Range: 6,030 nm</li>
+      <li>Operators: <br> Emirates <br> British Airways <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
   </div>
 
   <div class="model-container">
     <img class="model-image" src=" {{url_for('static',filename='images/boeing/747-400.jpg')}} ">
-    <h2><a href="/wandile-airliner-collection/boeing/747-400/">Boeing 747-400</a></h2>
-    <p>Number of engines: 4 <br> Number of seats: 660 <br> Range: 7,670 nm <br>
-    Operators: <br> British Airways <br> Delta Airlines <br> KLM <br> Body:
-    Wide-body
+    <h2><a href=" {{url_for('boeing_model_747')}} ">Boeing 747-400</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 660</li>
+      <li>Range: 7,670 nm</li>
+      <li>Operators: <br> British Airways <br> Delta Airlines <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
   </div>
 
 {% endblock %}
