@@ -1,3 +1,37 @@
 {% extends "body.html" %}
 {% block title %} Airbus {% endblock %}
-{% block modelteaser %} {% endblock %}
+{% block modelteaser %}
+  <div class="model-container">
+    <img class="model-image" src="{{url_for('static',filename='images/airbus/a318.jpg')}}">
+    <h2><a href="/wandile-airliner-collection/airbus/a318/">Airbus A318</a></h2>
+    <p>Number of engines: 2 <br> Number of seats: 132 <br> Range: 3,100 nm <br>
+    Operators: <br> British Airways <br> Air France <br> Avianca <br> Body:
+    Narrow-body
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a321.jpg')}}">
+    <h2><a href="/wandile-airliner-collection/airbus/a321/">Airbus A321</a></h2>
+    <p>Number of engines: 2 <br> Number of seats: 185-236 <br> Range: 3,200 nm <br>
+    Operators: <br> Lufthansa <br> US Airways <br> Air France <br> Body:
+    Narrow-body
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a330-200.jpg')}}">
+    <h2><a href="/wandile-airliner-collection/airbus/a330-200/">Airbus A330-200</a></h2>
+    <p>Number of engines: 2 <br> Number of seats: 246 <br> Range: 7,240 nm <br>
+    Operators: <br> Emirates <br> Air France <br> Turkish Airlines <br> Body:
+    Wide-body
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"
+    src="{{url_for('static',filename='images/airbus/a340-600.jpg')}}">
+    <h2><a href="/wandile-airliner-collection/airbus/a318/">Airbus A318</a></h2>
+    <p>Number of engines: 2 <br> Number of seats: 132 <br> Range: 3,100 nm <br>
+    Operators: <br> British Airways <br> Air France <br> Avianca <br> Body:
+    Narrow-body
+  </div>
+
+{% endblock %}

@@ -7,9 +7,7 @@ def layout():
 
 @app.route('/body')
 def body():
-    manufacturer='boeing'
-    models = ['737','747-400','757-200','767-300','777-300','787']
-    return render_template('body.html',models=models,manufacturer=manufacturer)
+    return render_template('body.html')
 
 @app.route('/wandile-airliner-collection/')
 def browse():
@@ -17,26 +15,19 @@ def browse():
 
 @app.route('/wandile-airliner-collection/boeing/')
 def boeing():
-    models = ['737','747-400','757-200','767-300','777-300','787']
-    images = ['737.jpg','747-400.jpg','757-200.jpg','767-300.jpg','777-300.jpg','787']
-    return render_template('boeing.html', models=models,
-    manufacturer='boeing',title='Boeing',images=images)
+    return render_template('boeing.html')
 
 @app.route('/wandile-airliner-collection/airbus/')
 def airbus():
-    manufacturer = 'Airbus'
     return render_template('airbus.html')
 
 @app.route('/wandile-airliner-collection/bombardier/')
 def bombardier():
-    manufacturer = 'Bombardier'
-    models = ['crj200','crj900','cseries','dash8']
-    return render_template('bombardier.html', models=models)
+    return render_template('bombardier.html')
 
 @app.route('/wandile-airliner-collection/tupelov/')
 def tupelov():
-    models = ['tu-204','tu-154','tu-144']
-    return render_template('tupelov.html', models=models)
+    return render_template('tupelov.html')
 
 @app.route('/wandile-airliner-collection/embraer/')
 def embraer():
