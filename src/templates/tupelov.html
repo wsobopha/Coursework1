@@ -1,6 +1,7 @@
 {% extends "body.html" %}
 {% block title %} Tupelov {% endblock %}
-{% block modelteaser %} 
+{% block modelteaser %}
+
   <div class="model-container">
     <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-204.jpg')}} ">
     <h2><a href=" {{url_for('tupelov_model_tu204')}} ">Tupelov Tu-204</a></h2>
@@ -8,7 +9,7 @@
       <li>Number of engines: 2</li>
       <li>Number of seats: 210</li>
       <li>Range: 3,240nm</li>
-      <li>Operators: Aeroflot <br> Air Koryo <br> Rossiya Airlines<br> </li>
+      <li>Operators: <br> Aeroflot <br> Air Koryo <br> Rossiya Airlines </li>
       <li>Body: Narrow-body</li>
     </ul>
   </div>
@@ -16,7 +17,7 @@
   <div class="model-container">
     <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-154.jpg')}} ">
     <h2><a href=" {{url_for('tupelov_model_tu154')}} ">Tupelov Tu-154</a></h2>
-    <ul class="model-teaser">
+    <ul class="model- teaser">
       <li>Number of engines: 3</li>
       <li>Number of seats: 114-180</li>
       <li>Range: 1,300-2,850 nm</li>
@@ -24,4 +25,5 @@
       <li>Body: Narrow-body</li>
     </ul>
   </div>
+
 {% endblock %}

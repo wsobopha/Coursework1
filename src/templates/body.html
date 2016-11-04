@@ -1,8 +1,10 @@
-{% extends "index.html" %}
+{% include "index.html" %}
 {% block body %}
   <div id="body-container">
    <h1> {% block title %} {% endblock %} </h1>
    {% block modelteaser %} {% endblock %}
+   {% block content %} {% endblock %}
+  </div>
 {% endblock %}
 
 

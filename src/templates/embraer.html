@@ -1,6 +1,7 @@
 {% extends "body.html" %}
 {% block title %} Embraer {% endblock %}
-{% block modelteaser %} 
+{% block modelteaser %}
+
   <div class="model-container">
     <img class="model-image" src=" {{url_for('static',filename='images/embraer/erj145.jpg')}} ">
     <h2><a href=" {{url_for('embraer_model_erj145')}} ">Embraer ERJ145</a></h2>
@@ -37,4 +38,5 @@
       <li>Body: Narrow-body</li>
     </ul>
   </div>
+
 {% endblock %}

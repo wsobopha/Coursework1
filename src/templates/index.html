@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
   <title>Wandile's Airliner Collection</title>
-  
-<link rel= "stylesheet" type="text/css" href= "{{ url_for('static', filename='css/style.css') }}">
-
+  <link rel= "stylesheet" type="text/css" href= "{{ url_for('static',filename='css/style.css') }}">
 </head>
 <body>
   <div id="header">
@@ -17,7 +15,7 @@
       <nav>
         <ul>
           <li>
-            <a href="/wandile-airliner-collection/">Browse</a>
+            <a href=" {{url_for('browse')}} ">Browse</a>
           </li>
           <li>
             <a href=" {{url_for('boeing')}} ">Boeing</a>
@@ -36,8 +34,8 @@
           </li>
         </ul>
       </nav>
-    </div
-  /div>
+    </div>
+  </div>
 
   {% block body %} {% endblock %}
 

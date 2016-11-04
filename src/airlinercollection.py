@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, abort
+from flask import Flask, render_template, redirect, url_for, abort, request
 app = Flask(__name__)
 
 @app.route('/')
@@ -9,9 +9,20 @@ def layout():
 def body():
     return render_template('body.html')
 
-@app.route('/wandile-airliner-collection/')
+@app.route("/wandile-airliner-collection/", methods=['POST','GET'])
 def browse():
-    return render_template('browse.html')
+    if request.method == 'POST':
+#    engines = (request.form['engines'])
+      seats = (request.form['seats'])
+      return render_template('browse.html',engines=engines,seats=seats,range=range,operators=operators,body=body)
+
+#    range = (request.form['range'])
+#    operators = (request.form['operators'])
+#    body = (request.form['body'])
+    else:
+      return render_template('browse.html')
+
+#    if request.method == 'POST':
 
 @app.route('/wandile-airliner-collection/boeing/')
 def boeing():

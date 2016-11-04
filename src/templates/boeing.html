@@ -1,6 +1,7 @@
 {% extends "body.html" %}
-{% block title %} {% endblock %}
-{% block modelteaser %} 
+{% block title %} Boeing {% endblock %}
+{% block modelteaser %}
+
   <div class="model-container">
     <img class="model-image" src=" {{url_for('static',filename='images/boeing/737.jpg')}} ">
     <h2><a href=" {{url_for('boeing_model_737')}} ">Boeing 737</a></h2>
@@ -24,6 +25,7 @@
       <li>Body: Narrow-body</li>
     </ul>
   </div>
+{% endblock %}
 
   <div class="model-container">
     <img class="model-image" src=" {{url_for('static',filename='images/boeing/767-300.jpg')}} ">
@@ -60,6 +62,7 @@
       <li>Body: Wide-body</li>
     </ul>
   </div>
+{% endblock %}
 
   <div class="model-container">
     <img class="model-image" src=" {{url_for('static',filename='images/boeing/747-400.jpg')}} ">

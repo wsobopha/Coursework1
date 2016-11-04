@@ -1,4 +1,87 @@
-{% extends "index.html" %}
+{% extends "body.html" %}
+{% include "boeing.html" without context %}
+{% block title %} Browse {% endblock %}
 {% block content %}
+<div id="forms-container">
+  <form class="browse">
+    <b class="form-label">Number of engines</b>
+    <select name="engines">
+      <option value="2">2</option>
+      <option value="4">4</option>
+    </select>
+  </form>
+
+  <form action ="/wandile-airliner-collection/" class="browse" method="POST">
+    <b class="form-label">Number of seats</b>
+    <select name="seats">
+      <option value="30-90">30-90</option>
+      <option value="100-250">100-250</option>
+      <option value="250-350">250-350</option>
+      <option value="350+">350+</option>
+    </select><br>
+    <input class="submit-button" type="submit" value="Select">
+  </form>
+
+  <form class="browse">
+    <b class="form-label">Range</b>
+    <select name="range">
+      <option value="900-2000">900-2000</option>
+      <option value="2000-3600">2000-3600</option>
+      <option value="3600+">3600+</option>
+    </select>
+  </form>
+
+  <form class="browse">
+    <b class="form-label">Operators</b>
+    <select name="operators">
+      <option value="Aeroflot">Aeroflot</option>
+      <option value="Aeromexico Connect">Aeromexico Connect</option>
+      <option value="Air Canada">Air Canada</option>
+      <option value="Air France">Air France</option>
+      <option value="Air Koryo">Air Koryo</option>
+      <option value="Air New Zealand">Air New Zealand</option>
+      <option value="Air Nostrum">Air Nostrum</option>
+      <option value="American Airlines">American Airlines</option>
+      <option value="ANA">ANA</option>
+      <option value="Avianca">Avianca</option>
+      <option value="bmi Regional">bmi Regional</option>
+      <option value="British Airways">British Airways</option>
+      <option value="Condor">Condor</option>
+      <option value="Delta Airlines">Delta Airlines</option>
+      <option value="EgyptAir">EgyptAir</option>
+      <option value="Emirates">Emirates</option>
+      <option value="Ethiopian Airlines">Ethiopian Airlines</option>
+      <option value="Etihad">Etihad</option>
+      <option value="Flybe">Flybe</option>
+      <option value="KLM">KLM</option>
+      <option value="Korean Air">Korean Air</option>
+      <option value="LOT Polish Airlines">LOT Polish Airlines</option>
+      <option value="Lufthansa">Lufthansa</option>
+      <option value="PIA">PIA</option>
+      <option value="Qatar Airways">Qatar Airways</option>
+      <option value="Rossiya Airlines">Rossiya Airlines</option>
+      <option value="Ryanair">Ryanair</option>
+      <option value="SA Express">SA Express</option>
+      <option value="Singapore Airlines">Singapore Airlines</option>
+      <option value="Thai Airways">Thai Airways</option>
+      <option value="TUIfly">TUIfly</option>
+      <option value="Turkish Airlines">Turkish Airlines</option>
+      <option value="United Continental">United Continental</option>
+      <option value="US Airways">US Airways</option>
+      <option value="Virgin Atlantic">Virgin Atlantic</option>
+    </select>
+  </form>
+
+  <form class="browse">
+    <b class="form-label">Body</b>
+    <select name="body">
+      <option value="Narrow-body">Narrow-body</option>
+      <option value="Wide-body">Wide-body</option>
+    </select>
+  </form>
+
+</div>
+
+
 
 {% endblock %}
