@@ -1,6 +1,7 @@
 {% extends "body.html" %}
 {% block title %} Bombardier {% endblock %}
 {% block modelteaser %}
+
   <div class="model-container">
     <img class="model-image" src=" {{url_for('static', filename='images/bombardier/crj200.jpg')}} ">
     <h2><a href=" {{url_for('bombardier_model_crj200')}} ">Bombardier CRJ200</a></h2>
@@ -23,7 +24,7 @@
       <li>Operators: <br> Lufthansa <br> Air Nostrum <br> Delta Airlines </li>
       <li>Body: Narrow-body</li>
     </ul>
-  </div
+  </div>
 
   <div class="model-container">
     <img class="model-image" src=" {{url_for('static',filename='images/bombardier/cseries.jpg')}} ">

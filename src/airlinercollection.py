@@ -12,17 +12,36 @@ def body():
 @app.route("/wandile-airliner-collection/", methods=['POST','GET'])
 def browse():
     if request.method == 'POST':
-#    engines = (request.form['engines'])
-      seats = (request.form['seats'])
-      return render_template('browse.html',engines=engines,seats=seats,range=range,operators=operators,body=body)
+      if 'one' in request.form:
+        number_of_engines = request.form.getlist('engines')
+        engines = number_of_engines[0]
+        print engines
+        return render_template('browse.html',engines=engines)
+      elif 'two' in request.form:
+        number_of_seats = request.form.getlist('seats')
+        seats = number_of_seats[0]
+        print seats
+        return render_template('browse.html',seats=seats)
+      elif 'three' in request.form:
+        nautical_range = request.form.getlist('range')
+        range = nautical_range[0]
+        print range
+        return render_template('browse.html',range=range)
+      elif 'four' in request.form:
+        airline_operators = request.form.getlist('operators')
+        operators = airline_operators[0]
+        print operators
+        return render_template('browse.html',operators=operators)
+      elif 'five' in request.form:
+        body_size = request.form.getlist('body')
+        body = body_size[0]
+        print body
+        return render_template('browse.html',body=body)
+      
 
-#    range = (request.form['range'])
-#    operators = (request.form['operators'])
-#    body = (request.form['body'])
-    else:
-      return render_template('browse.html')
+    return render_template('browse.html')
 
-#    if request.method == 'POST':
+#    number_of_seats = request.form.getlist('seats')
 
 @app.route('/wandile-airliner-collection/boeing/')
 def boeing():

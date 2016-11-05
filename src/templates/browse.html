@@ -1,17 +1,19 @@
 {% extends "body.html" %}
-{% include "boeing.html" without context %}
 {% block title %} Browse {% endblock %}
 {% block content %}
+
 <div id="forms-container">
-  <form class="browse">
+  <form class="browse" action="/wandile-airliner-collection/" method="POST">
     <b class="form-label">Number of engines</b>
     <select name="engines">
       <option value="2">2</option>
+      <option value="3">3</option>
       <option value="4">4</option>
-    </select>
+    </select><br>
+    <input class="submit-button" type="submit" name="one" value="Select">
   </form>
 
-  <form action ="/wandile-airliner-collection/" class="browse" method="POST">
+  <form class="browse" action="/wandile-airliner-collection/" method="POST">
     <b class="form-label">Number of seats</b>
     <select name="seats">
       <option value="30-90">30-90</option>
@@ -19,19 +21,20 @@
       <option value="250-350">250-350</option>
       <option value="350+">350+</option>
     </select><br>
-    <input class="submit-button" type="submit" value="Select">
+    <input class="submit-button" type="submit" name="two" value="Select">
   </form>
 
-  <form class="browse">
+  <form class="browse" action="/wandile-airliner-collection/" method="POST">
     <b class="form-label">Range</b>
     <select name="range">
       <option value="900-2000">900-2000</option>
       <option value="2000-3600">2000-3600</option>
       <option value="3600+">3600+</option>
-    </select>
+    </select><br>
+    <input class="submit-button" type="submit" name="three" value="Select">
   </form>
 
-  <form class="browse">
+  <form class="browse" action"/wandile-airliner-collection/" method="POST">
     <b class="form-label">Operators</b>
     <select name="operators">
       <option value="Aeroflot">Aeroflot</option>
@@ -69,19 +72,1986 @@
       <option value="United Continental">United Continental</option>
       <option value="US Airways">US Airways</option>
       <option value="Virgin Atlantic">Virgin Atlantic</option>
-    </select>
+    </select><br>
+    <input class="submit-button" type="submit" name="four" value="Select">
   </form>
 
-  <form class="browse">
+  <form class="browse" action="/wandile-airliner-collection/" method="POST">
     <b class="form-label">Body</b>
     <select name="body">
       <option value="Narrow-body">Narrow-body</option>
       <option value="Wide-body">Wide-body</option>
-    </select>
+    </select><br>
+    <input class="submit-button" type="submit" name="five" value="Select">
   </form>
 
 </div>
 
+{% if engines == '2' %}
 
+	<div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/737.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_737')}} ">Boeing 737</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 110-210</li>
+      <li>Range: 3,060 nm</li> 
+      <li>Operators: <br> Ryanair <br> Delta Airlines <br> TUIfly</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/757-200.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_757')}} ">Boeing 757-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 224</li>
+      <li>Range: 3,850 nm</li>
+      <li>Operators: <br> United Continental <br> American Airlines <br> Delta Airlines</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/767-300.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_767')}} ">Boeing 767-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 290</li>
+      <li>Range: 3,900 nm</li>
+      <li>Operators: <br> Delta Airlines <br> Condor <br> Air New Zealand</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/787.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_787')}} ">Boeing 787 Dreamliner</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 242</li>
+      <li>Range: 7,355 nm</li>
+      <li>Operators: <br> ANA <br> Ethiopian Airlines <br> British Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/777-300.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_777')}} ">Boeing 777-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 550</li>
+      <li>Range: 6,030 nm</li>
+      <li>Operators: <br> Emirates <br> British Airways <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src="{{url_for('static',filename='images/airbus/a318.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a318')}} ">Airbus A318</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 132</li>
+      <li>Range: 3,100 nm</li>
+      <li>Operators: <br> British Airways <br> Air France <br> Avianca</li> 
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a321.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a321')}} ">Airbus A321</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 185-236</li> 
+      <li>Range: 3,200 nm</li>
+      <li>Operators: <br> Lufthansa <br> US Airways <br> Air France</li>
+      <li>Body: Narrow-body</li>
+    <ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a330-200.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a330')}} ">Airbus A330-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 246</li>
+      <li>Range: 7,240 nm</li>
+      <li> Operators: <br> Emirates <br> Air France <br> Turkish Airlines</li>
+      <li>Body: Wide-body</li>
+    <ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a350.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a350')}} ">Airbus A350</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 280-366</li>
+      <li>Range: 8,210 nm</li>
+      <li>Operators: <br> Singapore Airlines <br> Qatar Airways <br> Thai Airways</li> 
+      <li>Body: Wide-body</li>
+    </ul>
+  </div> 
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static', filename='images/bombardier/crj200.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_crj200')}} ">Bombardier CRJ200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 50</li>
+      <li>Range: 1,644 nm</li>
+      <li>Operators: <br> Lufthansa  <br> Air Nostrum <br> SA Express</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/crj900.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_crj900')}} ">Bombardier CRJ900</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 76-90</li>
+      <li>Range: 1,553 nm</li>
+      <li>Operators: <br> Lufthansa <br> Air Nostrum <br> Delta Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/cseries.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_cseries')}} ">Bombardier CSeries</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 110-135</li>
+      <li>Range: 3,100-3,300 nm</li>
+      <li>Operators: <br> Delta Airlines <br> Korean Air <br> Air Canada </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/dash8.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_dash8')}} ">Bombardier Dash 8</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 39-78</li>
+      <li>Range: 924-1,125 nm</li>
+      <li>Operators: <br> ANA <br> Flybe <br> SA Express </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div> 
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-204.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu204')}} ">Tupelov Tu-204</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 210</li>
+      <li>Range: 3,240nm</li>
+      <li>Operators: <br> Aeroflot <br> Air Koryo <br> Rossiya Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/erj145.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_erj145')}} ">Embraer ERJ145</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 37-50</li>
+      <li>Range: 1,300-1,550 nm</li>
+      <li>Operators: <br> SA Express <br> bmi Regional <br> Aeromexico Connect</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/e170.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e170')}} ">Embraer E170</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 80</li>
+      <li>Range: 1,800-2,150 nm</li>
+      <li>Operators: <br> Aeromexico Connect<br> LOT Polish Airlines<br>British Airways</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src="
+    {{url_for('static',filename='images/embraer/e195.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e190')}} ">Embraer E190</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 100-124</li>
+      <li>Range: 1,850-2,450 nm</li>
+      <li>Operators: <br> Air Canada <br> Lufthansa <br> American Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if engines == '3' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-154.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu154')}} ">Tupelov Tu-154</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 3</li>
+      <li>Number of seats: 114-180</li>
+      <li>Range: 1,300-2,850 nm</li>
+      <li>Operators: <br> EgyptAir <br> PIA <br> Aeroflot  </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if engines == '4' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/747-400.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_747')}} ">Boeing 747-400</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 660</li>
+      <li>Range: 7,670 nm</li>
+      <li>Operators: <br> British Airways <br> Delta Airlines <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"
+    src="{{url_for('static',filename='images/airbus/a340-600.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a340')}} ">Airbus A340-600</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 379</li>
+      <li>Range: 7,500 nm</li>
+      <li>Operators: <br> Lufthansa <br> Virgin Atlantic <br> Etihad</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a380.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a380')}} ">Airbus A380</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 525</li>
+      <li>Range: 8,200 nm</li>
+      <li>Operators: <br> Emirates <br> Singapore Airlines <br> Thai Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if seats == '30-90' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static', filename='images/bombardier/crj200.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_crj200')}} ">Bombardier CRJ200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 50</li>
+      <li>Range: 1,644 nm</li>
+      <li>Operators: <br> Lufthansa  <br> Air Nostrum <br> SA Express</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/crj900.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_crj900')}} ">Bombardier CRJ900</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 76-90</li>
+      <li>Range: 1,553 nm</li>
+      <li>Operators: <br> Lufthansa <br> Air Nostrum <br> Delta Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/dash8.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_dash8')}} ">Bombardier Dash 8</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 39-78</li>
+      <li>Range: 924-1,125 nm</li>
+      <li>Operators: <br> ANA <br> Flybe <br> SA Express </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/erj145.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_erj145')}} ">Embraer ERJ145</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 37-50</li>
+      <li>Range: 1,300-1,550 nm</li>
+      <li>Operators: <br> SA Express <br> bmi Regional <br> Aeromexico Connect</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/e170.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e170')}} ">Embraer E170</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 80</li>
+      <li>Range: 1,800-2,150 nm</li>
+      <li>Operators: <br> Aeromexico Connect<br> LOT Polish Airlines<br>British Airways</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if seats == '100-250' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/737.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_737')}} ">Boeing 737</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 110-210</li>
+      <li>Range: 3,060 nm</li> 
+      <li>Operators: <br> Ryanair <br> Delta Airlines <br> TUIfly</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/757-200.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_757')}} ">Boeing 757-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 224</li>
+      <li>Range: 3,850 nm</li>
+      <li>Operators: <br> United Continental <br> American Airlines <br> Delta Airlines</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/787.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_787')}} ">Boeing 787 Dreamliner</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 242</li>
+      <li>Range: 7,355 nm</li>
+      <li>Operators: <br> ANA <br> Ethiopian Airlines <br> British Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src="{{url_for('static',filename='images/airbus/a318.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a318')}} ">Airbus A318</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 132</li>
+      <li>Range: 3,100 nm</li>
+      <li>Operators: <br> British Airways <br> Air France <br> Avianca</li> 
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a321.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a321')}} ">Airbus A321</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 185-236</li> 
+      <li>Range: 3,200 nm</li>
+      <li>Operators: <br> Lufthansa <br> US Airways <br> Air France</li>
+      <li>Body: Narrow-body</li>
+    <ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a330-200.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a330')}} ">Airbus A330-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 246</li>
+      <li>Range: 7,240 nm</li>
+      <li> Operators: <br> Emirates <br> Air France <br> Turkish Airlines</li>
+      <li>Body: Wide-body</li>
+    <ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/cseries.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_cseries')}} ">Bombardier CSeries</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 110-135</li>
+      <li>Range: 3,100-3,300 nm</li>
+      <li>Operators: <br> Delta Airlines <br> Korean Air <br> Air Canada </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-204.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu204')}} ">Tupelov Tu-204</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 210</li>
+      <li>Range: 3,240nm</li>
+      <li>Operators: <br> Aeroflot <br> Air Koryo <br> Rossiya Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src="
+    {{url_for('static',filename='images/embraer/e195.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e190')}} ">Embraer E190</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 100-124</li>
+      <li>Range: 1,850-2,450 nm</li>
+      <li>Operators: <br> Air Canada <br> Lufthansa <br> American Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if seats == '250-350' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/767-300.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_767')}} ">Boeing 767-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 290</li>
+      <li>Range: 3,900 nm</li>
+      <li>Operators: <br> Delta Airlines <br> Condor <br> Air New Zealand</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a350.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a350')}} ">Airbus A350</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 280-366</li>
+      <li>Range: 8,210 nm</li>
+      <li>Operators: <br> Singapore Airlines <br> Qatar Airways <br> Thai Airways</li> 
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if seats == '350+' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/777-300.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_777')}} ">Boeing 777-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 550</li>
+      <li>Range: 6,030 nm</li>
+      <li>Operators: <br> Emirates <br> British Airways <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/747-400.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_747')}} ">Boeing 747-400</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 660</li>
+      <li>Range: 7,670 nm</li>
+      <li>Operators: <br> British Airways <br> Delta Airlines <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"
+    src="{{url_for('static',filename='images/airbus/a340-600.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a340')}} ">Airbus A340-600</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 379</li>
+      <li>Range: 7,500 nm</li>
+      <li>Operators: <br> Lufthansa <br> Virgin Atlantic <br> Etihad</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a350.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a350')}} ">Airbus A350</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 280-366</li>
+      <li>Range: 8,210 nm</li>
+      <li>Operators: <br> Singapore Airlines <br> Qatar Airways <br> Thai Airways</li> 
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a380.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a380')}} ">Airbus A380</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 525</li>
+      <li>Range: 8,200 nm</li>
+      <li>Operators: <br> Emirates <br> Singapore Airlines <br> Thai Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if range == '900-2000' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static', filename='images/bombardier/crj200.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_crj200')}} ">Bombardier CRJ200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 50</li>
+      <li>Range: 1,644 nm</li>
+      <li>Operators: <br> Lufthansa  <br> Air Nostrum <br> SA Express</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/crj900.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_crj900')}} ">Bombardier CRJ900</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 76-90</li>
+      <li>Range: 1,553 nm</li>
+      <li>Operators: <br> Lufthansa <br> Air Nostrum <br> Delta Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/dash8.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_dash8')}} ">Bombardier Dash 8</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 39-78</li>
+      <li>Range: 924-1,125 nm</li>
+      <li>Operators: <br> ANA <br> Flybe <br> SA Express </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-154.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu154')}} ">Tupelov Tu-154</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 3</li>
+      <li>Number of seats: 114-180</li>
+      <li>Range: 1,300-2,850 nm</li>
+      <li>Operators: <br> EgyptAir <br> PIA <br> Aeroflot  </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/e170.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e170')}} ">Embraer E170</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 80</li>
+      <li>Range: 1,800-2,150 nm</li>
+      <li>Operators: <br> Aeromexico Connect<br> LOT Polish Airlines<br>British Airways</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src="
+    {{url_for('static',filename='images/embraer/e195.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e190')}} ">Embraer E190</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 100-124</li>
+      <li>Range: 1,850-2,450 nm</li>
+      <li>Operators: <br> Air Canada <br> Lufthansa <br> American Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if range == '2000-3600' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/737.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_737')}} ">Boeing 737</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 110-210</li>
+      <li>Range: 3,060 nm</li> 
+      <li>Operators: <br> Ryanair <br> Delta Airlines <br> TUIfly</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src="{{url_for('static',filename='images/airbus/a318.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a318')}} ">Airbus A318</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 132</li>
+      <li>Range: 3,100 nm</li>
+      <li>Operators: <br> British Airways <br> Air France <br> Avianca</li> 
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a321.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a321')}} ">Airbus A321</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 185-236</li> 
+      <li>Range: 3,200 nm</li>
+      <li>Operators: <br> Lufthansa <br> US Airways <br> Air France</li>
+      <li>Body: Narrow-body</li>
+    <ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/cseries.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_cseries')}} ">Bombardier CSeries</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 110-135</li>
+      <li>Range: 3,100-3,300 nm</li>
+      <li>Operators: <br> Delta Airlines <br> Korean Air <br> Air Canada </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-204.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu204')}} ">Tupelov Tu-204</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 210</li>
+      <li>Range: 3,240nm</li>
+      <li>Operators: <br> Aeroflot <br> Air Koryo <br> Rossiya Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-154.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu154')}} ">Tupelov Tu-154</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 3</li>
+      <li>Number of seats: 114-180</li>
+      <li>Range: 1,300-2,850 nm</li>
+      <li>Operators: <br> EgyptAir <br> PIA <br> Aeroflot  </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/e170.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e170')}} ">Embraer E170</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 80</li>
+      <li>Range: 1,800-2,150 nm</li>
+      <li>Operators: <br> Aeromexico Connect<br> LOT Polish Airlines<br>British Airways</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src="
+    {{url_for('static',filename='images/embraer/e195.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e190')}} ">Embraer E190</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 100-124</li>
+      <li>Range: 1,850-2,450 nm</li>
+      <li>Operators: <br> Air Canada <br> Lufthansa <br> American Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if range == '3600+' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/757-200.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_757')}} ">Boeing 757-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 224</li>
+      <li>Range: 3,850 nm</li>
+      <li>Operators: <br> United Continental <br> American Airlines <br> Delta Airlines</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/767-300.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_767')}} ">Boeing 767-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 290</li>
+      <li>Range: 3,900 nm</li>
+      <li>Operators: <br> Delta Airlines <br> Condor <br> Air New Zealand</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/787.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_787')}} ">Boeing 787 Dreamliner</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 242</li>
+      <li>Range: 7,355 nm</li>
+      <li>Operators: <br> ANA <br> Ethiopian Airlines <br> British Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/777-300.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_777')}} ">Boeing 777-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 550</li>
+      <li>Range: 6,030 nm</li>
+      <li>Operators: <br> Emirates <br> British Airways <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/747-400.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_747')}} ">Boeing 747-400</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 660</li>
+      <li>Range: 7,670 nm</li>
+      <li>Operators: <br> British Airways <br> Delta Airlines <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a330-200.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a330')}} ">Airbus A330-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 246</li>
+      <li>Range: 7,240 nm</li>
+      <li> Operators: <br> Emirates <br> Air France <br> Turkish Airlines</li>
+      <li>Body: Wide-body</li>
+    <ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"
+    src="{{url_for('static',filename='images/airbus/a340-600.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a340')}} ">Airbus A340-600</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 379</li>
+      <li>Range: 7,500 nm</li>
+      <li>Operators: <br> Lufthansa <br> Virgin Atlantic <br> Etihad</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a350.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a350')}} ">Airbus A350</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 280-366</li>
+      <li>Range: 8,210 nm</li>
+      <li>Operators: <br> Singapore Airlines <br> Qatar Airways <br> Thai Airways</li> 
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a380.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a380')}} ">Airbus A380</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 525</li>
+      <li>Range: 8,200 nm</li>
+      <li>Operators: <br> Emirates <br> Singapore Airlines <br> Thai Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Aeroflot' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-204.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu204')}} ">Tupelov Tu-204</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 210</li>
+      <li>Range: 3,240nm</li>
+      <li>Operators: <br> Aeroflot <br> Air Koryo <br> Rossiya Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-154.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu154')}} ">Tupelov Tu-154</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 3</li>
+      <li>Number of seats: 114-180</li>
+      <li>Range: 1,300-2,850 nm</li>
+      <li>Operators: <br> EgyptAir <br> PIA <br> Aeroflot  </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Aeromexico Connect' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/erj145.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_erj145')}} ">Embraer ERJ145</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 37-50</li>
+      <li>Range: 1,300-1,550 nm</li>
+      <li>Operators: <br> SA Express <br> bmi Regional <br> Aeromexico Connect</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/e170.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e170')}} ">Embraer E170</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 80</li>
+      <li>Range: 1,800-2,150 nm</li>
+      <li>Operators: <br> Aeromexico Connect<br> LOT Polish Airlines<br>British Airways</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Air Canada' %}
+
+  <div class="model-container">
+    <img class="model-image" src="
+    {{url_for('static',filename='images/embraer/e195.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e190')}} ">Embraer E190</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 100-124</li>
+      <li>Range: 1,850-2,450 nm</li>
+      <li>Operators: <br> Air Canada <br> Lufthansa <br> American Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Air France' %}
+
+  <div class="model-container">
+    <img class="model-image" src="{{url_for('static',filename='images/airbus/a318.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a318')}} ">Airbus A318</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 132</li>
+      <li>Range: 3,100 nm</li>
+      <li>Operators: <br> British Airways <br> Air France <br> Avianca</li> 
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a321.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a321')}} ">Airbus A321</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 185-236</li> 
+      <li>Range: 3,200 nm</li>
+      <li>Operators: <br> Lufthansa <br> US Airways <br> Air France</li>
+      <li>Body: Narrow-body</li>
+    <ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a330-200.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a330')}} ">Airbus A330-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 246</li>
+      <li>Range: 7,240 nm</li>
+      <li> Operators: <br> Emirates <br> Air France <br> Turkish Airlines</li>
+      <li>Body: Wide-body</li>
+    <ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Air Koryo' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-204.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu204')}} ">Tupelov Tu-204</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 210</li>
+      <li>Range: 3,240nm</li>
+      <li>Operators: <br> Aeroflot <br> Air Koryo <br> Rossiya Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Air New Zealand' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/767-300.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_767')}} ">Boeing 767-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 290</li>
+      <li>Range: 3,900 nm</li>
+      <li>Operators: <br> Delta Airlines <br> Condor <br> Air New Zealand</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Air Nostrum' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static', filename='images/bombardier/crj200.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_crj200')}} ">Bombardier CRJ200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 50</li>
+      <li>Range: 1,644 nm</li>
+      <li>Operators: <br> Lufthansa  <br> Air Nostrum <br> SA Express</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/crj900.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_crj900')}} ">Bombardier CRJ900</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 76-90</li>
+      <li>Range: 1,553 nm</li>
+      <li>Operators: <br> Lufthansa <br> Air Nostrum <br> Delta Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'American Airlines' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/757-200.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_757')}} ">Boeing 757-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 224</li>
+      <li>Range: 3,850 nm</li>
+      <li>Operators: <br> United Continental <br> American Airlines <br> Delta Airlines</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src="
+    {{url_for('static',filename='images/embraer/e195.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e190')}} ">Embraer E190</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 100-124</li>
+      <li>Range: 1,850-2,450 nm</li>
+      <li>Operators: <br> Air Canada <br> Lufthansa <br> American Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'ANA' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/787.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_787')}} ">Boeing 787 Dreamliner</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 242</li>
+      <li>Range: 7,355 nm</li>
+      <li>Operators: <br> ANA <br> Ethiopian Airlines <br> British Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/dash8.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_dash8')}} ">Bombardier Dash 8</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 39-78</li>
+      <li>Range: 924-1,125 nm</li>
+      <li>Operators: <br> ANA <br> Flybe <br> SA Express </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Avianca' %}
+
+  <div class="model-container">
+    <img class="model-image" src="{{url_for('static',filename='images/airbus/a318.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a318')}} ">Airbus A318</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 132</li>
+      <li>Range: 3,100 nm</li>
+      <li>Operators: <br> British Airways <br> Air France <br> Avianca</li> 
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'bmi Regional' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/erj145.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_erj145')}} ">Embraer ERJ145</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 37-50</li>
+      <li>Range: 1,300-1,550 nm</li>
+      <li>Operators: <br> SA Express <br> bmi Regional <br> Aeromexico Connect</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{%if operators == 'British Airways' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/787.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_787')}} ">Boeing 787 Dreamliner</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 242</li>
+      <li>Range: 7,355 nm</li>
+      <li>Operators: <br> ANA <br> Ethiopian Airlines <br> British Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/777-300.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_777')}} ">Boeing 777-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 550</li>
+      <li>Range: 6,030 nm</li>
+      <li>Operators: <br> Emirates <br> British Airways <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/747-400.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_747')}} ">Boeing 747-400</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 660</li>
+      <li>Range: 7,670 nm</li>
+      <li>Operators: <br> British Airways <br> Delta Airlines <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src="{{url_for('static',filename='images/airbus/a318.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a318')}} ">Airbus A318</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 132</li>
+      <li>Range: 3,100 nm</li>
+      <li>Operators: <br> British Airways <br> Air France <br> Avianca</li> 
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/e170.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e170')}} ">Embraer E170</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 80</li>
+      <li>Range: 1,800-2,150 nm</li>
+      <li>Operators: <br> Aeromexico Connect<br> LOT Polish Airlines<br>British Airways</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Condor' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/767-300.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_767')}} ">Boeing 767-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 290</li>
+      <li>Range: 3,900 nm</li>
+      <li>Operators: <br> Delta Airlines <br> Condor <br> Air New Zealand</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Delta Airlines' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/737.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_737')}} ">Boeing 737</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 110-210</li>
+      <li>Range: 3,060 nm</li> 
+      <li>Operators: <br> Ryanair <br> Delta Airlines <br> TUIfly</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/757-200.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_757')}} ">Boeing 757-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 224</li>
+      <li>Range: 3,850 nm</li>
+      <li>Operators: <br> United Continental <br> American Airlines <br> Delta Airlines</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/767-300.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_767')}} ">Boeing 767-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 290</li>
+      <li>Range: 3,900 nm</li>
+      <li>Operators: <br> Delta Airlines <br> Condor <br> Air New Zealand</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/747-400.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_747')}} ">Boeing 747-400</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 660</li>
+      <li>Range: 7,670 nm</li>
+      <li>Operators: <br> British Airways <br> Delta Airlines <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/crj900.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_crj900')}} ">Bombardier CRJ900</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 76-90</li>
+      <li>Range: 1,553 nm</li>
+      <li>Operators: <br> Lufthansa <br> Air Nostrum <br> Delta Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/cseries.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_cseries')}} ">Bombardier CSeries</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 110-135</li>
+      <li>Range: 3,100-3,300 nm</li>
+      <li>Operators: <br> Delta Airlines <br> Korean Air <br> Air Canada </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'EgyptAir' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-154.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu154')}} ">Tupelov Tu-154</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 3</li>
+      <li>Number of seats: 114-180</li>
+      <li>Range: 1,300-2,850 nm</li>
+      <li>Operators: <br> EgyptAir <br> PIA <br> Aeroflot  </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Emirates' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/777-300.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_777')}} ">Boeing 777-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 550</li>
+      <li>Range: 6,030 nm</li>
+      <li>Operators: <br> Emirates <br> British Airways <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a330-200.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a330')}} ">Airbus A330-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 246</li>
+      <li>Range: 7,240 nm</li>
+      <li> Operators: <br> Emirates <br> Air France <br> Turkish Airlines</li>
+      <li>Body: Wide-body</li>
+    <ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a380.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a380')}} ">Airbus A380</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 525</li>
+      <li>Range: 8,200 nm</li>
+      <li>Operators: <br> Emirates <br> Singapore Airlines <br> Thai Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Ethiopian Airlines' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/787.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_787')}} ">Boeing 787 Dreamliner</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 242</li>
+      <li>Range: 7,355 nm</li>
+      <li>Operators: <br> ANA <br> Ethiopian Airlines <br> British Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Etihad' %}
+
+  <div class="model-container">
+    <img class="model-image"
+    src="{{url_for('static',filename='images/airbus/a340-600.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a340')}} ">Airbus A340-600</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 379</li>
+      <li>Range: 7,500 nm</li>
+      <li>Operators: <br> Lufthansa <br> Virgin Atlantic <br> Etihad</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Flybe' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/dash8.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_dash8')}} ">Bombardier Dash 8</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 39-78</li>
+      <li>Range: 924-1,125 nm</li>
+      <li>Operators: <br> ANA <br> Flybe <br> SA Express </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'KLM' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/777-300.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_777')}} ">Boeing 777-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 550</li>
+      <li>Range: 6,030 nm</li>
+      <li>Operators: <br> Emirates <br> British Airways <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/747-400.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_747')}} ">Boeing 747-400</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 660</li>
+      <li>Range: 7,670 nm</li>
+      <li>Operators: <br> British Airways <br> Delta Airlines <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Korean Air' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/cseries.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_cseries')}} ">Bombardier CSeries</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 110-135</li>
+      <li>Range: 3,100-3,300 nm</li>
+      <li>Operators: <br> Delta Airlines <br> Korean Air <br> Air Canada </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'LOT Polish Airlines' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/e170.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e170')}} ">Embraer E170</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 80</li>
+      <li>Range: 1,800-2,150 nm</li>
+      <li>Operators: <br> Aeromexico Connect<br> LOT Polish Airlines<br>British Airways</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Lufthansa' %}
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a321.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a321')}} ">Airbus A321</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 185-236</li> 
+      <li>Range: 3,200 nm</li>
+      <li>Operators: <br> Lufthansa <br> US Airways <br> Air France</li>
+      <li>Body: Narrow-body</li>
+    <ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"
+    src="{{url_for('static',filename='images/airbus/a340-600.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a340')}} ">Airbus A340-600</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 379</li>
+      <li>Range: 7,500 nm</li>
+      <li>Operators: <br> Lufthansa <br> Virgin Atlantic <br> Etihad</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static', filename='images/bombardier/crj200.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_crj200')}} ">Bombardier CRJ200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 50</li>
+      <li>Range: 1,644 nm</li>
+      <li>Operators: <br> Lufthansa  <br> Air Nostrum <br> SA Express</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/crj900.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_crj900')}} ">Bombardier CRJ900</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 76-90</li>
+      <li>Range: 1,553 nm</li>
+      <li>Operators: <br> Lufthansa <br> Air Nostrum <br> Delta Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src="
+    {{url_for('static',filename='images/embraer/e195.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e190')}} ">Embraer E190</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 100-124</li>
+      <li>Range: 1,850-2,450 nm</li>
+      <li>Operators: <br> Air Canada <br> Lufthansa <br> American Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'PIA' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-154.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu154')}} ">Tupelov Tu-154</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 3</li>
+      <li>Number of seats: 114-180</li>
+      <li>Range: 1,300-2,850 nm</li>
+      <li>Operators: <br> EgyptAir <br> PIA <br> Aeroflot  </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Qatar Airways' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-154.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu154')}} ">Tupelov Tu-154</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 3</li>
+      <li>Number of seats: 114-180</li>
+      <li>Range: 1,300-2,850 nm</li>
+      <li>Operators: <br> EgyptAir <br> PIA <br> Aeroflot  </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Rossiya Airlines' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-204.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu204')}} ">Tupelov Tu-204</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 210</li>
+      <li>Range: 3,240nm</li>
+      <li>Operators: <br> Aeroflot <br> Air Koryo <br> Rossiya Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Ryanair' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/737.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_737')}} ">Boeing 737</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 110-210</li>
+      <li>Range: 3,060 nm</li> 
+      <li>Operators: <br> Ryanair <br> Delta Airlines <br> TUIfly</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'SA Express' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static', filename='images/bombardier/crj200.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_crj200')}} ">Bombardier CRJ200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 50</li>
+      <li>Range: 1,644 nm</li>
+      <li>Operators: <br> Lufthansa  <br> Air Nostrum <br> SA Express</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/dash8.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_dash8')}} ">Bombardier Dash 8</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 39-78</li>
+      <li>Range: 924-1,125 nm</li>
+      <li>Operators: <br> ANA <br> Flybe <br> SA Express </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/erj145.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_erj145')}} ">Embraer ERJ145</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 37-50</li>
+      <li>Range: 1,300-1,550 nm</li>
+      <li>Operators: <br> SA Express <br> bmi Regional <br> Aeromexico Connect</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Singapore Airlines' %}
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a350.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a350')}} ">Airbus A350</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 280-366</li>
+      <li>Range: 8,210 nm</li>
+      <li>Operators: <br> Singapore Airlines <br> Qatar Airways <br> Thai Airways</li> 
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a380.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a380')}} ">Airbus A380</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 525</li>
+      <li>Range: 8,200 nm</li>
+      <li>Operators: <br> Emirates <br> Singapore Airlines <br> Thai Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Thai Airways' %}
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a350.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a350')}} ">Airbus A350</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 280-366</li>
+      <li>Range: 8,210 nm</li>
+      <li>Operators: <br> Singapore Airlines <br> Qatar Airways <br> Thai Airways</li> 
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a380.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a380')}} ">Airbus A380</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 525</li>
+      <li>Range: 8,200 nm</li>
+      <li>Operators: <br> Emirates <br> Singapore Airlines <br> Thai Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'TUIfly' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/737.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_737')}} ">Boeing 737</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 110-210</li>
+      <li>Range: 3,060 nm</li> 
+      <li>Operators: <br> Ryanair <br> Delta Airlines <br> TUIfly</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Turkish Airlines' %}
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a330-200.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a330')}} ">Airbus A330-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 246</li>
+      <li>Range: 7,240 nm</li>
+      <li> Operators: <br> Emirates <br> Air France <br> Turkish Airlines</li>
+      <li>Body: Wide-body</li>
+    <ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'United Continental' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/757-200.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_757')}} ">Boeing 757-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 224</li>
+      <li>Range: 3,850 nm</li>
+      <li>Operators: <br> United Continental <br> American Airlines <br> Delta Airlines</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'US Airways' %}
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a321.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a321')}} ">Airbus A321</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 185-236</li> 
+      <li>Range: 3,200 nm</li>
+      <li>Operators: <br> Lufthansa <br> US Airways <br> Air France</li>
+      <li>Body: Narrow-body</li>
+    <ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Virgin Atlantic' %}
+
+  <div class="model-container">
+    <img class="model-image"
+    src="{{url_for('static',filename='images/airbus/a340-600.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a340')}} ">Airbus A340-600</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 379</li>
+      <li>Range: 7,500 nm</li>
+      <li>Operators: <br> Lufthansa <br> Virgin Atlantic <br> Etihad</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if body == 'Narrow-body' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/737.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_737')}} ">Boeing 737</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 110-210</li>
+      <li>Range: 3,060 nm</li> 
+      <li>Operators: <br> Ryanair <br> Delta Airlines <br> TUIfly</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/757-200.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_757')}} ">Boeing 757-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 224</li>
+      <li>Range: 3,850 nm</li>
+      <li>Operators: <br> United Continental <br> American Airlines <br> Delta Airlines</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src="{{url_for('static',filename='images/airbus/a318.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a318')}} ">Airbus A318</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 132</li>
+      <li>Range: 3,100 nm</li>
+      <li>Operators: <br> British Airways <br> Air France <br> Avianca</li> 
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a321.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a321')}} ">Airbus A321</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 185-236</li> 
+      <li>Range: 3,200 nm</li>
+      <li>Operators: <br> Lufthansa <br> US Airways <br> Air France</li>
+      <li>Body: Narrow-body</li>
+    <ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static', filename='images/bombardier/crj200.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_crj200')}} ">Bombardier CRJ200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 50</li>
+      <li>Range: 1,644 nm</li>
+      <li>Operators: <br> Lufthansa  <br> Air Nostrum <br> SA Express</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/crj900.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_crj900')}} ">Bombardier CRJ900</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 76-90</li>
+      <li>Range: 1,553 nm</li>
+      <li>Operators: <br> Lufthansa <br> Air Nostrum <br> Delta Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/cseries.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_cseries')}} ">Bombardier CSeries</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 110-135</li>
+      <li>Range: 3,100-3,300 nm</li>
+      <li>Operators: <br> Delta Airlines <br> Korean Air <br> Air Canada </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/bombardier/dash8.jpg')}} ">
+    <h2><a href=" {{url_for('bombardier_model_dash8')}} ">Bombardier Dash 8</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 39-78</li>
+      <li>Range: 924-1,125 nm</li>
+      <li>Operators: <br> ANA <br> Flybe <br> SA Express </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-204.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu204')}} ">Tupelov Tu-204</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 210</li>
+      <li>Range: 3,240nm</li>
+      <li>Operators: <br> Aeroflot <br> Air Koryo <br> Rossiya Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/tupelov/tu-154.jpg')}} ">
+    <h2><a href=" {{url_for('tupelov_model_tu154')}} ">Tupelov Tu-154</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 3</li>
+      <li>Number of seats: 114-180</li>
+      <li>Range: 1,300-2,850 nm</li>
+      <li>Operators: <br> EgyptAir <br> PIA <br> Aeroflot  </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/erj145.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_erj145')}} ">Embraer ERJ145</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 37-50</li>
+      <li>Range: 1,300-1,550 nm</li>
+      <li>Operators: <br> SA Express <br> bmi Regional <br> Aeromexico Connect</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/embraer/e170.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e170')}} ">Embraer E170</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 80</li>
+      <li>Range: 1,800-2,150 nm</li>
+      <li>Operators: <br> Aeromexico Connect<br> LOT Polish Airlines<br>British Airways</li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src="
+    {{url_for('static',filename='images/embraer/e195.jpg')}} ">
+    <h2><a href=" {{url_for('embraer_model_e190')}} ">Embraer E190</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 100-124</li>
+      <li>Range: 1,850-2,450 nm</li>
+      <li>Operators: <br> Air Canada <br> Lufthansa <br> American Airlines </li>
+      <li>Body: Narrow-body</li>
+    </ul>
+  </div>
+
+{% endif %}
+
+{% if operators == 'Wide-body' %}
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/767-300.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_767')}} ">Boeing 767-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 290</li>
+      <li>Range: 3,900 nm</li>
+      <li>Operators: <br> Delta Airlines <br> Condor <br> Air New Zealand</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/777-300.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_777')}} ">Boeing 777-300</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 550</li>
+      <li>Range: 6,030 nm</li>
+      <li>Operators: <br> Emirates <br> British Airways <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image" src=" {{url_for('static',filename='images/boeing/747-400.jpg')}} ">
+    <h2><a href=" {{url_for('boeing_model_747')}} ">Boeing 747-400</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 660</li>
+      <li>Range: 7,670 nm</li>
+      <li>Operators: <br> British Airways <br> Delta Airlines <br> KLM</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a330-200.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a330')}} ">Airbus A330-200</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 246</li>
+      <li>Range: 7,240 nm</li>
+      <li> Operators: <br> Emirates <br> Air France <br> Turkish Airlines</li>
+      <li>Body: Wide-body</li>
+    <ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"
+    src="{{url_for('static',filename='images/airbus/a340-600.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a340')}} ">Airbus A340-600</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 379</li>
+      <li>Range: 7,500 nm</li>
+      <li>Operators: <br> Lufthansa <br> Virgin Atlantic <br> Etihad</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a350.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a350')}} ">Airbus A350</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 2</li>
+      <li>Number of seats: 280-366</li>
+      <li>Range: 8,210 nm</li>
+      <li>Operators: <br> Singapore Airlines <br> Qatar Airways <br> Thai Airways</li> 
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+  <div class="model-container">
+    <img class="model-image"src="{{url_for('static',filename='images/airbus/a380.jpg')}}">
+    <h2><a href=" {{url_for('airbus_model_a380')}} ">Airbus A380</a></h2>
+    <ul class="model-teaser">
+      <li>Number of engines: 4</li>
+      <li>Number of seats: 525</li>
+      <li>Range: 8,200 nm</li>
+      <li>Operators: <br> Emirates <br> Singapore Airlines <br> Thai Airways</li>
+      <li>Body: Wide-body</li>
+    </ul>
+  </div>
+
+{% endif %}
 
 {% endblock %}
