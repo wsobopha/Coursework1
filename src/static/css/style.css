@@ -105,16 +105,33 @@ h1 {
 	color: #303145;
 }
 
-h2 a {
+h1 a {
+	margin-top: 20px;
+	margin-left: 20px;
+	font-family: sans-serif;
+	color: #303145;
+	text-decoration: none;
+}
+
+h1 a:hover {
+	color: #ecb406;
+}
+
+h2 {
 	color: #e2e0e0;
 	position: relative;
 	text-decoration: none;
 	font-family: sans-serif;
 }
 
-h2 a:hover {
-	color: #ecb406;
+h3 {
+	color: #e2e0e0;
+	position: relative;
+	text-decoration: none;
+	font-family: sans-serif;
 }
+
+
 
 h2 {
 	margin-top: 5px;
